@@ -1,0 +1,8 @@
+# Lire le fichier en spécifiant le nombre de colonnes
+#-----------------------------------------------------
+
+import pandas as pd
+
+# Lire le fichier en spécifiant le nombre de colonnes attendu
+EM2020 = pd.read_csv("votre_fichier.csv", encoding='latin1', header=None, names=list(range(19)))
+print("Fichier chargé avec succès.")
