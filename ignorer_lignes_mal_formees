@@ -1,0 +1,5 @@
+import pandas as pd
+
+# Ignorez les lignes mal formées
+EM2020 = pd.read_csv("votre_fichier.csv", encoding='latin1', on_bad_lines='skip')  # version python > 1.3.0
+print("Fichier chargé avec succès.")
