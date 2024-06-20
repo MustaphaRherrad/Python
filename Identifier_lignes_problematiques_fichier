@@ -1,0 +1,11 @@
+# Utiliser skiprows et nrows pour localiser les lignes problématiques
+#--------------------------------------------------------------------
+
+import pandas as pd
+
+# Lire les premières lignes du fichier pour identifier où le problème pourrait se situer
+try:
+    EM2020 = pd.read_csv("euromillions_202002.csv", encoding='latin1', delimiter=',', nrows=10)
+    print(EM2020.head())
+except pd.errors.ParserError as e:
+    print(f"Erreur détectée: {e}")
