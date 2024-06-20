@@ -1,0 +1,17 @@
+# Installez la bibliothèque chardet si vous ne l'avez pas déjà
+pip install chardet
+
+# Utilisez chardet pour détecter l'encodage
+import pandas as pd
+import chardet
+
+# Détectez l'encodage du fichier
+with open("votre_fichier.csv", 'rb') as f:
+    result = chardet.detect(f.read())
+
+file_encoding = result['encoding']
+print(f"L'encodage détecté est : {file_encoding}")
+
+# Lisez le fichier CSV en utilisant l'encodage détecté
+EM2020 = pd.read_csv("votre_fichier.csv", encoding=file_encoding)
+print("Fichier chargé avec succès.")
