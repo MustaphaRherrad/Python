@@ -1,0 +1,8 @@
+# CODE UTILE SI ON RENCONTRE DES ERREURS DE TYPE 'ENCODING' OU 'PARSERERROR'
+# IL PERMET DE VISUALISER LES PREMIERES LIGNES ET VOIR PAR EXEMPLE LES SEPARATEURS UTILSES
+#----------------------------------------------------------------------------
+
+# Afficher les premières lignes du fichier
+with open("votre_fichier.csv", 'r', encoding='latin1') as file:
+    for _ in range(5):
+        print(file.readline())
